@@ -11,21 +11,11 @@ class Solution {
         int t, low = 0, mid = 0, high = n - 1;
         while(mid <= high) {
             t = a[mid];
-            if(t == 0) {
-                swap(a[low++], a[mid++]);
-                continue;
-            }
-            else if(t == 1) {
-                mid++;
-                continue;
-            }
-            else if(t == 2) {
-                swap(a[mid], a[high--]);
-                continue;
-            }
+            if(t == 0) swap(a[low++], a[mid++]);
+            else if(t == 1) mid++;
+            else if(t == 2) swap(a[mid], a[high--]);
         }
     }
-    
 };
 
 //{ Driver Code Starts.
