@@ -18,7 +18,7 @@ public:
             return -1;
         }
         pair<int,int> mini = {INT_MAX,-1}, smini = {INT_MAX,-1};
-        for(int i=0; i<k; i++){
+        for(int i = 0; i < k; i++){
             if(costs[0][i] < mini.first){
                 smini = mini;
                 mini = {costs[0][i], i};
@@ -27,10 +27,10 @@ public:
                 smini = {costs[0][i], i};
         }
         
-        for(int i=1; i<n; i++){
+        for(int i = 1; i < n; i++){
             pair<int,int> curMini = {INT_MAX,-1}, curSmini = {INT_MAX,-1};
             
-            for(int j=0; j<k; j++){
+            for(int j = 0; j < k; j++){
                 int x = costs[i][j];
                 if(j != mini.second)
                     x += mini.first;
