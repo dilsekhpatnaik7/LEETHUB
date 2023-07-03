@@ -15,7 +15,7 @@ public:
                 continue;
             }
             if(A[low] <= A[mid]) {
-                if((A[low] <= key) && (key < A[mid])) high = mid - 1;
+                if((A[low] <= key) && (key <= A[mid])) high = mid - 1;
                 else low = mid + 1;
             }
             else {
