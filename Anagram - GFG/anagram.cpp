@@ -4,10 +4,8 @@ using namespace std;
 
 
 // } Driver Code Ends
-class Solution
-{
+class Solution {
     public:
-    //Function is to check whether two strings are anagram of each other or not.
     bool isAnagram(string a, string b){
         if(a.length() != b.length()) return false;
 
