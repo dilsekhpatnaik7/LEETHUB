@@ -8,10 +8,16 @@ using namespace std;
 //User function template for C++
 class Solution{
 public:	
+	string reversed(string S) {
+	    int low = 0, high = S.length() - 1;
+	    while(low <= high) {
+	        swap(S[low++], S[high--]);
+	    }
+	    return S;
+	}
+	
 	int isPalindrome(string S) {
-	    string x = S;
-	    reverse(x.begin(), x.end());
-	    return x == S;
+	    return S == reversed(S);
 	}
 
 };
