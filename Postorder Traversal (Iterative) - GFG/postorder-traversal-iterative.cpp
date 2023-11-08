@@ -119,7 +119,7 @@ class Solution{
     
     vector<int> postOrder(Node* root) {
         if(!root) return {};
-
+        
         vector<int> ans;
         solve(root, ans);
         return ans;
