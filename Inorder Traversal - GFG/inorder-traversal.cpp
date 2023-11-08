@@ -30,16 +30,29 @@ struct Node {
 }; */
 
 class Solution {
-public:
+  public:
     void solve(Node* root, vector<int>& ans) {
-        if(root == NULL) return;
-        
-        solve(root->left, ans);
-        ans.push_back(root->data);
-        solve(root->right, ans);
-    }  
+        stack<Node*> s;
+        Node* node = root;
+
+        while(true) {
+            if(node) {
+                s.push(node);
+                node = node->left;
+            } else {
+                if(s.empty()) break;
+                node = s.top();
+                s.pop();
+
+                ans.push_back(node->data);
+                node = node->right;
+            }
+        }
+    }
   
     vector<int> inOrder(Node* root) {
+        if(!root) return {};
+
         vector<int> ans;
         solve(root, ans);
         return ans;
