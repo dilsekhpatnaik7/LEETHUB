@@ -15,23 +15,18 @@ void display(struct Node *head);
 
 // } Driver Code Ends
 //User function Template for C
+struct Node* solve(struct Node* head) {
+    if(!head || !head->next) return head;
+
+    struct Node* reversedHead = solve(head->next);
+    head->next->next = head;
+    head->next = NULL;
+
+    return reversedHead;
+}
 
 struct Node* reverseList(struct Node *head) {
-    if(!head) return head;
-
-    struct Node* prev = NULL;
-    struct Node* current = head;
-    struct Node* nextNode = current->next;
-
-    while(current) {
-        current->next = prev;
-        prev = current;
-        current = nextNode;
-        if(nextNode) {
-            nextNode = nextNode->next;
-        }
-    }
-    return prev;   
+    return solve(head);
 }
 
 //{ Driver Code Starts.
