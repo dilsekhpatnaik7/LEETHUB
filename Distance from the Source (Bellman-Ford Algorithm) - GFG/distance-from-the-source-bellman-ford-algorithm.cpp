@@ -11,7 +11,7 @@ class Solution {
         vector<int> dist(V, 1e8);
         dist[S] = 0;
         
-        for(int i = 0; i < V - 1; i++) {
+        for(int i = 0; i < V; i++) {
             for(auto i: edges) {
                 int u = i[0];
                 int v = i[1];
