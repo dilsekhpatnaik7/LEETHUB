@@ -12,10 +12,10 @@ class Solution {
         dist[S] = 0;
         
         for(int i = 0; i < V; i++) {
-            for(auto i: edges) {
-                int u = i[0];
-                int v = i[1];
-                int wt = i[2];
+            for(auto it: edges) {
+                int u = it[0];
+                int v = it[1];
+                int wt = it[2];
                 
                 if(dist[u] != 1e8 && dist[u] + wt < dist[v]) dist[v] = dist[u] + wt; 
             }
